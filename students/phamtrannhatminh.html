@@ -1,105 +1,164 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Nguyễn Văn A</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Phạm Trần Nhật Minh - Portfolio</title>
     <link rel="stylesheet" href="/assets/css/phamtrannhatminh.css">
+    <!-- Các thẻ link CSS giống như trên trang chính -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  
 </head>
-<body class="bg-black text-white overflow-x-hidden">
-    <!-- Floating Navbar -->
-    <nav class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-opacity-80 bg-gray-900 rounded-full px-8 py-3 shadow-lg z-50">
-        <ul class="flex space-x-6">
-            <li><a href="#about" class="nav-link text-teal-300 hover:text-yellow-400 transition">Giới thiệu</a></li>
-            <li><a href="#education" class="nav-link text-teal-300 hover:text-yellow-400 transition">Học tập</a></li>
-            <li><a href="#skills" class="nav-link text-teal-300 hover:text-yellow-400 transition">Kỹ năng</a></li>
-            <li><a href="#projects" class="nav-link text-teal-300 hover:text-yellow-400 transition">Dự án</a></li>
-            <li><a href="#contact" class="nav-link text-teal-300 hover:text-yellow-400 transition">Liên hệ</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero/About Section -->
-    <section id="about" class="min-h-screen relative flex items-center justify-center overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-teal-900 via-purple-900 to-black animate-gradient"></div>
-        <div class="relative z-10 text-center">
-            <div class="hexagon mx-auto mb-8">
-                <img src="/assets/images/nhatminh.jpg" alt="Avatar" class="w-40 h-40 object-cover">
-            </div>
-            <h1 class="text-7xl font-extrabold text-yellow-400 glitch" data-text="Phạm Trần Nhật Minh">Phạm Trần Nhật Minh</h1>
-            <p class="text-3xl text-teal-300 mt-4 animate-pulse">Code là nghệ thuật, tôi là nghệ sĩ</p>
-            <p class="text-gray-400 max-w-lg mx-auto mt-4">Sống để sáng tạo, phá vỡ giới hạn, và biến ý tưởng thành hiện thực.</p>
-        </div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-teal-500 opacity-20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl animate-float-slow"></div>
-    </section>
+<body>
+    <!-- Navigation - giống như trên trang chính -->
 
-    <!-- Education Section -->
-    <section id="education" class="py-32 relative">
-        <h2 class="text-6xl font-bold text-center text-yellow-400 mb-20 glitch" data-text="Hành trình học tập">Hành trình học tập</h2>
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div class="relative p-8 bg-gradient-to-r from-teal-800 to-gray-900 rounded-lg transform rotate-2 hover:rotate-0 transition-all">
-                <h3 class="text-3xl font-semibold text-teal-300">Năm 1 & 2</h3>
-                <p class="text-gray-300 mt-4">Khởi đầu với C, Java, và các cấu trúc dữ liệu và giải thuật</p>
-                <div class="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full"></div>
-            </div>
-            
-            <div class="relative p-8 bg-gradient-to-r from-purple-800 to-gray-900 rounded-lg transform -rotate-2 hover:rotate-0 transition-all">
-                <h3 class="text-3xl font-semibold text-purple-300">Năm 3 & 4</h3>
-                <p class="text-gray-300 mt-4">ASP.NET, Java Spring Boot,React, PHP</p>
-                <div class="absolute -bottom-4 -right-4 w-8 h-8 bg-purple-400 rounded-full"></div>
+    <!-- Personal Hero Section -->
+    <section class="personal-hero">
+        <div class="container text-center">
+            <img src="/assets/images/nhatminh.jpg" alt="Phạm Trần Nhật Minh" class="profile-img">
+            <div class="personal-info">
+                <h1 class="personal-name">Phạm Trần Nhật Minh</h1>
+                <p class="personal-role">Backend Developer</p>
+                <div class="social-buttons">
+                    <a href="github.com/nhatminh4403"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="nhatminh4403@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-32 bg-gray-900 relative">
-        <h2 class="text-6xl font-bold text-center text-yellow-400 mb-20 glitch" data-text="Năng lực">Năng lực</h2>
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div class="skill-card p-8 bg-teal-700 rounded-lg transform hover:scale-110 transition-all">
-                <h3 class="text-2xl font-semibold text-yellow-400">Lập trình</h3>
-                <p class="text-gray-300 mt-4">Java, C#, React</p>
+    <!-- About Me Section -->
+    <section class="about-me">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Giới thiệu</h2>
+                    <p>Xin chào! Tôi là Phạm Trần Nhật Minh, sinh viên năm 4 ngành Công nghệ phần mềm tại ĐH HUTECH. Tôi đam
+                        mê phát triển giao diện người dùng và có kinh nghiệm làm việc với các framework hiện đại như
+                        React, Spring Boot và EntityFrameWork.</p>
+                    <p>Tôi hướng đến trở thành một Backend Developer và không ngừng học hỏi các công nghệ mới.</p>
+
+                    <h3 class="mt-4 mb-3">Sở thích cá nhân</h3>
+                    <ul>
+                        <li>Lập trình các dự án mã nguồn mở</li>
+                        <li>Đọc sách về công nghệ và khởi nghiệp</li>
+                        <li>Chơi guitar và nghe nhạc</li>
+                        <li>Du lịch và khám phá những địa điểm mới</li>
+                        <li>Chơi trò chơi điện tử</li>
+                    </ul>
+
+                    <h3 class="mt-4 mb-3">Định hướng nghề nghiệp</h3>
+                    <p>Tôi mong muốn trở thành một Backend Developer trong các công ty công nghệ hàng đầu, đồng
+                        thời đóng góp vào cộng đồng mã nguồn mở và hướng dẫn các bạn sinh viên mới.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Kỹ năng</h2>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name">HTML5 & CSS3</div>
+                            <div class="skill-percent">80%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-percent">70%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name">React.js</div>
+                            <div class="skill-percent">50%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name">C#</div>
+                            <div class="skill-percent">75%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name">Java</div>
+                            <div class="skill-percent">75%</div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5 mb-3">Quá trình học tập</h3>
+                    <div class="education-item">
+                        <div class="education-date">2022 - Hiện tại</div>
+                        <div class="education-degree">Ngành Công nghệ phần mềm</div>
+                        <div class="education-institution">ĐH HUTECH</div>
+                        <p class="mt-2">GPA Hiện tại: 3.62/4.0</p>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="skill-card p-8 bg-purple-700 rounded-lg transform hover:scale-110 transition-all">
-                <h3 class="text-2xl font-semibold text-yellow-400">UI/UX</h3>
-                <p class="text-gray-300 mt-4">Figma, Tailwind - Thiết kế không chỉ là đẹp, mà là trải nghiệm.</p>
-            </div>
-            <!-- <div class="skill-card p-8 bg-teal-700 rounded-lg transform hover:scale-110 transition-all">
-                <h3 class="text-2xl font-semibold text-yellow-400">AI/ML</h3>
-                <p class="text-gray-300 mt-4">TensorFlow, PyTorch - Tương lai là của máy học.</p>
-            </div> -->
         </div>
-        <div class="absolute top-1/2 right-0 w-48 h-48 bg-yellow-500 opacity-10 rounded-full blur-2xl animate-float"></div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-32 relative">
-        <h2 class="text-6xl font-bold text-center text-yellow-400 mb-20 glitch" data-text="Tác phẩm nghệ thuật">Tác phẩm nghệ thuật</h2>
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div class="relative p-8 bg-gradient-to-br from-teal-800 to-black rounded-lg transform skew-y-2 hover:skew-y-0 transition-all">
-                <h3 class="text-3xl font-semibold text-teal-300">E-commerce Website</h3>
-                <p class="text-gray-300 mt-4">Sử dụng kiến thức áp dụng vào đồ án</p>
-            </div>
-            <div class="relative p-8 bg-gradient-to-br from-purple-800 to-black rounded-lg transform -skew-y-2 hover:skew-y-0 transition-all">
-                <h3 class="text-3xl font-semibold text-purple-300">Website Đặt Vé Xem Phim</h3>
-                <p class="text-gray-300 mt-4">Tiếp cận với thế giới rạp chiếu bằng Spring Boot</p>
+    <!-- Personal Projects -->
+    <section class="personal-projects">
+        <div class="container">
+            <h2 class="section-title">Dự án tham gia</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 hover-scale">
+                        <img src="/assets/images/nhatminh-project1.png" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Trang web bán Laptop</h5>
+                            <p class="card-text">Ứng dụng web giúp người dùng theo dõi và mua laptop</p>
+                            <p><strong>Công nghệ:</strong> ASP.NET, MSSQL, JavaScript</p>
+                            <a href="https://github.com/NLSon03/Website_Selling_Computer" class="btn btn-primary">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 hover-scale">
+                        <img src="/assets/images/nhatminh-project2.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Trang web đặt vé xem phim</h5>
+                            <p class="card-text">Website  đặt vé xem phim với đầy đủ tính năng như đặt ghế, thanh toán, đánh
+                                giá phim, và hệ thống quản lý đơn đặt vé.</p>
+                            <p><strong>Công nghệ:</strong> Java Spring Book, JavaScript, MySQL</p>
+                            <a href="https://github.com/nhatminh4403/Ba-Anh-Em-Movies" class="btn btn-primary">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 bg-gray-900 relative">
-        <h2 class="text-6xl font-bold text-center text-yellow-400 mb-20 glitch" data-text="Kết nối với tôi">Kết nối với tôi</h2>
-        <div class="container mx-auto px-6 text-center space-y-8">
-            <p class="text-2xl text-teal-300 animate-bounce">Email: <a href="mailto:nhatminh4403@gmail.com" class="hover:text-yellow-400">nhatminh4403@gmail.com</a></p>
-            <!-- <p class="text-2xl text-teal-300 animate-bounce">LinkedIn: <a href="#" class="hover:text-yellow-400">linkedin.com/in/nguyenvana</a></p> -->
-            <p class="text-2xl text-teal-300 animate-bounce">GitHub: <a href="https://github.com/nhatminh4403" class="hover:text-yellow-400">github.com/nhatminh4403</a></p>
-            <!-- <p class="text-2xl text-teal-300 animate-bounce">CV: <a href="#" id="cv-link" class="hover:text-yellow-400">Tải CV</a></p> -->
-        </div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-500 opacity-10 rounded-full blur-3xl animate-float-slow"></div>
-    </section>
+    <!-- Contact Section - tương tự như trang chính -->
 
-    <script src="/assets/js/phamtrannhatminh.js"></script>
+    <!-- Footer - tương tự như trang chính -->
+
+    <!-- Script cuối trang -->
 </body>
+
+</html>
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/phamtrannhatminh.js"></script>
+</body>
+
 </html>
