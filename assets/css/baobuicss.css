@@ -1,0 +1,164 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.avatar img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.avatar img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 2.5em;
+  color: #ffeb3b;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+  transform: translateY(-5px);
+}
+
+/* Sections */
+section {
+  padding: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffeb3b;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Giáo dục */
+.edu-item {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 10px auto;
+  width: 60%;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.edu-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+}
+
+/* Kỹ năng */
+.skill-card {
+  display: inline-block;
+  background: #ff6b6b;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  transition: transform 0.4s;
+}
+
+.skill-card:hover {
+  transform: rotateX(20deg) rotateY(20deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dự án - Slideshow */
+.slideshow {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slide {
+  background: #4ecdc4;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  animation: slideInfinite 6s infinite;
+}
+
+@keyframes slideInfinite {
+  0% {
+    transform: translateY(100%);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Liên hệ */
+.contact-links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: transform 0.3s;
+}
+
+.contact-links a:hover {
+  transform: scale(1.2);
+  color: #ffeb3b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
