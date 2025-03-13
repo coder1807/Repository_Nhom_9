@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Hạnh Duyên</title>
+    <style>
+      :root {
+        --primary-color: #4a6fa5;
+        --secondary-color: #166088;
+        --accent-color: #4fc3dc;
+        --text-color: #333;
+        --light-bg: #f5f9fc;
+        --dark-bg: #2c3e50;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: var(--light-bg);
+      }
+
+      header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        position: relative;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid white;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      nav {
+        background-color: var(--secondary-color);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      nav ul li {
+        margin: 0 1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 1rem 0.5rem;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+      }
+
+      .interests,
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .interest-item,
+      .skill-item {
+        background-color: var(--light-bg);
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 500;
+      }
+
+      .interest-item {
+        background-color: #e6f7ff;
+        color: #0066cc;
+      }
+
+      .skill-item {
+        background-color: #e6ffe6;
+        color: #006600;
+      }
+
+      .education-item,
+      .project-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .education-item:last-child,
+      .project-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .education-item h3,
+      .project-item h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .education-year,
+      .project-year {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: normal;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .contact-item a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .contact-item a:hover {
+        color: var(--accent-color);
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--light-bg);
+        border-radius: 50%;
+      }
+
+      .progress-container {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        margin: 0.5rem 0 1.5rem;
+      }
+
+      .progress-bar {
+        height: 10px;
+        border-radius: 10px;
+        background-color: var(--accent-color);
+      }
+
+      footer {
+        background-color: var(--dark-bg);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .project-card {
+        background-color: var(--light-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .tag {
+        background-color: rgba(74, 111, 165, 0.1);
+        color: var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul li {
+          margin: 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .project-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img src="../assets/images/avatar.png" alt="Ảnh đại diện" class="profile-img" />
+        <h1>Lưu Nguyễn Hạnh Duyên</h1>
+        <p>Data Engineer</p>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#education">Học tập</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section id="about">
+        <h2>Giới thiệu bản thân</h2>
+        <p>
+          Xin chào! Tôi là sinh viên năm 4 ngành Công nghệ thông tin tại Đại học
+          Công nghệ TP.HCM (HUTECH). Tôi đam mê phát triển phần mềm và giải
+          quyết các vấn đề thực tế bằng công nghệ. Trang portfolio này tổng hợp
+          hành trình học tập và các dự án tôi đã thực hiện trong quá trình học 4
+          năm đại học.
+        </p>
+
+        <h3>Sở thích</h3>
+        <div class="interests">
+          <span class="interest-item">Nghe nhạc</span>
+          <span class="interest-item">Xem phim</span>
+          <span class="interest-item">Học hỏi điều mới lạ</span>
+        </div>
+
+        <h3>Định hướng nghề nghiệp</h3>
+        <p>
+          Tôi định hướng trở thành một Data Engineer chuyên sâu về xử lý dữ liệu
+          lớn, xây dựng hệ thống dữ liệu tối ưu và tự động hóa quy trình ETL.
+          Tôi muốn rèn luyện kỹ năng với các công nghệ như Apache Spark, Kafka
+          và cơ sở dữ liệu đám mây, hướng tới việc phát triển các nền tảng dữ
+          liệu mạnh mẽ, hỗ trợ ra quyết định dựa trên dữ liệu. Mục tiêu dài hạn
+          của tôi là trở thành Data Architect, thiết kế hệ thống dữ liệu chiến
+          lược, giúp doanh nghiệp khai thác tối đa giá trị từ dữ liệu.
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Quá trình học tập</h2>
+
+        <div class="education-item">
+          <h3>
+            Năm thứ nhất
+            <span class="education-year">2021-2022</span>
+          </h3>
+          <p>
+            Năm đầu tiên tôi tập trung vào việc xây dựng nền tảng kiến thức cơ
+            bản về lập trình và toán học.
+          </p>
+          <h4>Các môn học chính:</h4>
+          <ul>
+            <li>Nhập môn công nghệ thông tin</li>
+            <li>Cấu trúc dữ liệu và giải thuật</li>
+            <li>Toán rời rạc</li>
+            <li>Cơ sở dữ liệu</li>
+          </ul>
+        </div>
+
+        <div class="education-item">
+          <h3>
+            Năm thứ hai
+            <span class="education-year">2022-2023</span>
+          </h3>
+          <p>
+            Tôi bắt đầu đi sâu vào code và học về quy trình phát triển phần mềm.
+          </p>
+          <h4>Các môn học chính:</h4>
+          <ul>
+            <li>Lập trình hướng đối tượng</li>
+            <li>Cơ sở dữ liệu</li>
+            <li>Lập trình winform</li>
+          </ul>
+          <h4>Dự án tiêu biểu:</h4>
+          <p>Winform Phòng khám nha khoa</p>
+        </div>
+
+        <div class="education-item">
+          <h3>
+            Năm thứ ba
+            <span class="education-year">2023-2024</span>
+          </h3>
+          <p>
+            Tôi mở rộng kiến thức về các công nghệ hiện đại và đi sâu hơn về
+            phát triển web
+          </p>
+          <h4>Các môn học chính:</h4>
+          <ul>
+            <li>Lập trình web</li>
+            <li>Công nghệ phần mềm</li>
+            <li>Trí tuệ nhân tạo</li>
+            <li>Phân tích và thiết kế hệ thống</li>
+          </ul>
+          <h4>Dự án tiêu biểu:</h4>
+          <p>Website Đặt vé xem phim</p>
+        </div>
+
+        <div class="education-item">
+          <h3>
+            Năm thứ tư
+            <span class="education-year">2024-2025</span>
+          </h3>
+          <p>
+            Tôi tập trung vào việc hoàn thiện kỹ năng và chuẩn bị cho thị trường
+            việc làm.
+          </p>
+          <h4>Các môn học chính:</h4>
+          <ul>
+            <li>Lập trình ứng dụng di động</li>
+            <li>Công cụ và môi trường phát triển phần mềm</li>
+            <li>Ngôn ngữ phát triển ứng dụng mới</li>
+            <li>Kiểm thử và đảm bảo chất lượng phần mềm</li>
+          </ul>
+          <h4>Dự án tiêu biểu:</h4>
+          <p>Website và App mobile Đặt vé xem phim</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Kỹ năng</h2>
+
+        <h3>Ngôn ngữ lập trình</h3>
+        <div class="skills">
+          <span class="skill-item">Java</span>
+          <span class="skill-item">JavaScript</span>
+          <span class="skill-item">Python</span>
+          <span class="skill-item">C#</span>
+          <span class="skill-item">SQL</span>
+        </div>
+
+        <h3>Cơ sở dữ liệu</h3>
+        <div class="skills">
+          <span class="skill-item">MySQL</span>
+          <span class="skill-item">MongoDB</span>
+          <span class="skill-item">PostgreSQL</span>
+          <span class="skill-item">Redis</span>
+        </div>
+
+        <h3>DevOps & Công cụ</h3>
+        <div class="skills">
+          <span class="skill-item">Git</span>
+          <span class="skill-item">Docker</span>
+          <span class="skill-item">AWS</span>
+          <span class="skill-item">Jira</span>
+        </div>
+
+        <h3>Thiết kế UI/UX</h3>
+        <div class="skills">
+          <span class="skill-item">Figma</span>
+        </div>
+
+      <section id="projects">
+        <h2>Dự án cá nhân</h2>
+
+        <div class="project-gallery">
+          <div class="project-card">
+            <img
+              src="/api/placeholder/300/180"
+              alt="Ảnh dự án 1"
+              class="project-img"
+            />
+            <div class="project-info">
+              <h3>
+                Winform Phòng khám nha khoa
+                <span class="project-year">2022</span>
+              </h3>
+              <p>
+                Ứng dụng giúp thống kê, lên lịch khám cho phòng khám nha khoa.
+              </p>
+              <div class="tags">
+                <span class="tag">SQL Server</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="/api/placeholder/300/180"
+              alt="Ảnh dự án 2"
+              class="project-img"
+            />
+            <div class="project-info">
+              <h3>
+                Website và App mobile Đặt vé xem phim
+                <span class="project-year">2023-2024</span>
+              </h3>
+              <p>
+                Hệ thống Đặt vé xem phim tiện lợi cho rạp chiếu phim
+              </p>
+              <div class="tags">
+                <span class="tag">Java Spring Boot</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Javascript</span>
+                <span class="tag">Flutter</span>
+
+              </div>
+            </div>
+          </div>
+
+
+      <section id="contact">
+        <h2>Liên hệ</h2>
+        <p>
+          Nếu bạn quan tâm đến các dự án của tôi hoặc muốn trao đổi về cơ hội
+          hợp tác, đừng ngần ngại liên hệ với tôi qua:
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <a href="mailto:luuduyen1206@gmail">luuduyen1206@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <a href="#" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💻</div>
+            <a href="github.com/gionhengayhe" target="_blank">GitHub</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📄</div>
+            <a href="#" target="_blank">Xem CV</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>
+          &copy; 2025 Portfolio Sinh Viên CNPM. Tất cả các quyền được bảo lưu.
+        </p>
+        <p>Được thiết kế và phát triển với ❤️ bởi Hạnh Duyên</p>
+      </div>
+    </footer>
+  </body>
+</html>
