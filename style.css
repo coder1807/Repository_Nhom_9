@@ -1,0 +1,88 @@
+/* General Styling */
+body.dark-mode {
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-50 {
+    background-color: #374151;
+    color: #e5e7eb;
+}
+
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-700 {
+    color: #d1d5db;
+}
+
+body.dark-mode .text-indigo-600 {
+    color: #a5b4fc;
+}
+
+body.dark-mode .bg-indigo-50 {
+    background-color: #2d3748;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #4b5563;
+}
+
+body.dark-mode #dark-mode-toggle i {
+    color: #f3f4f6;
+}
+
+/* Smooth Transitions */
+a, .nls-team-card {
+    transition: all 0.3s ease;
+}
+
+/* Sticky Header */
+header.sticky {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode header.sticky {
+    background-color: rgba(55, 65, 81, 0.95);
+}
+
+/* Parallax Effect */
+.nls-parallax-bg {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="#a5b4fc"/></svg>');
+    background-size: 20px 20px;
+    transition: transform 0.1s ease;
+}
+
+/* Team Card Hover */
+.nls-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .nls-team-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .md:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        display: none;
+    }
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nls-parallax-bg {
+        display: none;
+    }
+}
